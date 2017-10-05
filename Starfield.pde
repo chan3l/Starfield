@@ -37,9 +37,18 @@ interface Particle
   public void show();
   public void move();
 }
-class OddballParticle //uses an interface
+class OddballParticle implements Particle
 {
-  //your code here
+  double urX, urY, urAngle, urSpeed;
+  OddballParticle() {
+    
+  }
+  public void move() {
+    
+  }
+  public void show() {
+    
+  }
 }
 class JumboParticle //uses inheritance
 {
