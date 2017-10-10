@@ -30,6 +30,10 @@ class NormalParticle implements Particle
   public void move() {
     myX =myX +Math.cos(myAngle)*mySpeed;
     myY =myY +Math.sin(myAngle)*mySpeed;
+    if (mousePressed) {
+      myX = mouseX;
+      myY= mouseY;
+    }
   }
   public void show() {
     fill(255);
@@ -65,6 +69,27 @@ class OddballParticle implements Particle
 class JumboParticle extends NormalParticle
 {
   public void show() {
-    ellipse((float)myX,(float)myY,300,300);
+    for(int x =0; x<100; x++){
+      ellipse((float)myX,(float)myY,100,100);
+    }
+  }
+  public void move() {
+    myX=400;
+    for(int x= 0; x<800;x++){
+    myX=myX+1;
+    myY=myY+1;
+  }
+    if (mousePressed) {
+      myX = mouseX;
+      myY= mouseY;
+    }
+    if(myX>800)
+    myX=myX-60;
+    if(myX<0)
+    myX=myX+1;
+    if(myY>800)
+    myY=myY-5;
+    if(myY<0)
+    myY=myY+20;
   }
 }
